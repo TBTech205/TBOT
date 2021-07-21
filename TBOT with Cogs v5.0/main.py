@@ -35,29 +35,10 @@ async def on_guild_join(guild):
     with open("databases/prefixes.json", "w") as f:
         json.dump(prefixes,f)
 
-
-
-
 @client.event
 async def status_task():
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"my prefix"))
     
-    await asyncio.sleep(10)
-
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="help"))
-    
-    await asyncio.sleep(10)
-
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="Discord.py"))
-    
-    await asyncio.sleep(10)
-
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Your commands"))
-    
-    await asyncio.sleep(10)
-
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=f"over {str(len(client.guilds))} servers"))
-
     await asyncio.sleep(10)
 
     await status_task()
@@ -67,4 +48,4 @@ for filename in os.listdir("./cogs"):
         client.load_extension(f"cogs.{filename[:-3]}")
 
 keep_alive()
-client.run("ODE4NTg1ODU1ODYxMDYzNjkw.YEaNfA.aYFFgNkxnA3XQGVBkUuYkNlhbOE")
+client.run("YOUR TOKEN")
